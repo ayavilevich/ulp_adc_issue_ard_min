@@ -6,6 +6,9 @@
 #include "esp32/ulp.h"
 #include "esp_chip_info.h"
 #include "esp_idf_version.h"
+#if ESP_IDF_VERSION_MAJOR == 5
+#include "soc\rtc_cntl_reg.h"	 // IDF 5 needs this for RTC_CNTL_LOW_POWER_ST_REG, etc
+#endif
 
 void setup()
 {
